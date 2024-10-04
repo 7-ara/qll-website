@@ -87,7 +87,7 @@ export const qll_theme: CustomThemeConfig = {
     "--color-error-800": "143 77 41", // #8f4d29
     "--color-error-900": "117 63 33", // #753f21
     // surface | #1c3c54 
-    "--color-surface-50": "221 226 229", // #dde2e5
+    "--color-surface-50": "255 255 255", // #ffffff
     "--color-surface-100": "210 216 221", // #d2d8dd
     "--color-surface-200": "198 206 212", // #c6ced4
     "--color-surface-300": "164 177 187", // #a4b1bb
