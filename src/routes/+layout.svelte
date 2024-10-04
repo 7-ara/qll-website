@@ -29,9 +29,11 @@
       class="fixed h-16 w-full z-50"
     >
 			<svelte:fragment slot="lead">
-        <a class="flex flex-row gap-2 items-center h-16 btn-lg hover:variant-soft-primary" href="/">
-          <img src="/logos/logo-with-text.png" class="h-10 block dark:hidden" alt="QLL Logo" />
-          <img src="/logos/alt-logo-with-text.png" class="h-10 hidden dark:block" alt="QLL Logo" />
+        <a class="h-16 btn-md hover:variant-soft-primary px-2" href="/">
+          <img src="/logos/logo.png" class="h-10 block sm:hidden dark:hidden" alt="QLL Logo" />
+          <img src="/logos/logo-with-text.png" class="h-10 hidden sm:block dark:hidden" alt="QLL Logo" />
+          <img src="/logos/alt-logo.png" class="h-10 hidden dark:block dark:sm:hidden" alt="QLL Logo" />
+          <img src="/logos/alt-logo-with-text.png" class="h-10 hidden dark:sm:block" alt="QLL Logo" />
         </a>
       </svelte:fragment>
       <div class="flex flex-row">
@@ -40,11 +42,10 @@
 				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Schedule</a>
 				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Fixtures & Results</a>
 				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Competitions & Events</a>
-				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Teams</a>
-				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Players</a>
-				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Venues</a>
 				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Quizzes</a>
 				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Scorer</a>
+				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Teams & Players</a>
+				<a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/">Venues</a>
       </div>
       <svelte:fragment slot="trail">
 				<a class="flex flex-row items-center btn btn-md hover:variant-soft-primary" href="/">
