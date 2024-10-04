@@ -42,17 +42,17 @@ export const qll_theme: CustomThemeConfig = {
     "--color-secondary-700": "148 34 176", // #9422b0
     "--color-secondary-800": "118 27 141", // #761b8d
     "--color-secondary-900": "97 22 115", // #611673
-    // tertiary | #446FEE 
-    "--color-tertiary-50": "227 233 252", // #e3e9fc
-    "--color-tertiary-100": "218 226 252", // #dae2fc
-    "--color-tertiary-200": "208 219 251", // #d0dbfb
-    "--color-tertiary-300": "180 197 248", // #b4c5f8
-    "--color-tertiary-400": "124 154 243", // #7c9af3
-    "--color-tertiary-500": "68 111 238", // #446FEE
-    "--color-tertiary-600": "61 100 214", // #3d64d6
-    "--color-tertiary-700": "51 83 179", // #3353b3
-    "--color-tertiary-800": "41 67 143", // #29438f
-    "--color-tertiary-900": "33 54 117", // #213675
+    // tertiary | #16E2E9 
+    "--color-tertiary-50": "220 251 252", // #dcfbfc
+    "--color-tertiary-100": "208 249 251", // #d0f9fb
+    "--color-tertiary-200": "197 248 250", // #c5f8fa
+    "--color-tertiary-300": "162 243 246", // #a2f3f6
+    "--color-tertiary-400": "92 235 240", // #5cebf0
+    "--color-tertiary-500": "22 226 233", // #16E2E9
+    "--color-tertiary-600": "20 203 210", // #14cbd2
+    "--color-tertiary-700": "17 170 175", // #11aaaf
+    "--color-tertiary-800": "13 136 140", // #0d888c
+    "--color-tertiary-900": "11 111 114", // #0b6f72
     // success | #4DE916 
     "--color-success-50": "228 252 220", // #e4fcdc
     "--color-success-100": "219 251 208", // #dbfbd0
