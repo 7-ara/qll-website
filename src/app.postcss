@@ -1,4 +1,28 @@
+@font-face {
+  font-family: "HammersmithOne";
+  src: url("/fonts/HammersmithOne/HammersmithOne-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Kindersley Grand Arcade";
+  src: url("/fonts/GrandArcade/KINDGARG.TTF") format("truetype");
+}
+@font-face {
+  font-family: "Overpass";
+  font-style: normal;
+  src: url("/fonts/Overpass/Overpass-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Overpass";
+  font-style: italic;
+  src: url("/fonts/Overpass/Overpass-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+:root [data-theme='qll_theme'] {
+  --theme-font-family-base: 'Overpass', sans-serif;
+  --theme-font-family-heading: 'HammersmithOne', sans-serif;
+}

@@ -6,20 +6,26 @@ import { skeleton } from '@skeletonlabs/tw-plugin';
 import { qll_theme } from './src/qll_theme'
 
 export default {
-	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
-	theme: {
-		extend: {},
-	},
-	plugins: [
-		forms,
-		typography,
-		skeleton({
-			themes: {
-				custom: [
-					qll_theme,
-				],
-			},
-		}),
-	],
+  darkMode: 'class',
+  content: ['./src/**/*.{html,js,svelte,ts}', join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
+  theme: {
+    extend: {
+      fontFamily: {
+        'sans': 'Overpass, Helvetica, sans-serif',
+        'serif': '"Kindersley Grand Arcade", "Times New Roman", serif',
+        'brand': 'HammersmithOne, Arial'
+      },
+    },
+  },
+  plugins: [
+    forms,
+    typography,
+    skeleton({
+      themes: {
+        custom: [
+          qll_theme,
+        ],
+      },
+    }),
+  ],
 } satisfies Config;
