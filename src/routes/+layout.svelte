@@ -1,8 +1,7 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppBar } from '@skeletonlabs/skeleton';
+	import NavBar from '$lib/components/NavBar.svelte';
   import { AppRail, AppRailTile, AppRailAnchor } from '@skeletonlabs/skeleton';
-  import { LightSwitch } from '@skeletonlabs/skeleton';
 	import { ListBox } from '@skeletonlabs/skeleton';
 	import { ListBoxItem } from '@skeletonlabs/skeleton';
 
@@ -10,12 +9,6 @@
   import { Drawer } from '@skeletonlabs/skeleton';
   import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
   import { initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
-
-	// Floating UI for Popups
-	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
-  import { popup } from '@skeletonlabs/skeleton';
-  import type { PopupSettings } from '@skeletonlabs/skeleton';
-	import { storePopup } from '@skeletonlabs/skeleton';
 
   // Icons
   import { Icon } from 'svelte-icons-pack';
@@ -34,12 +27,10 @@
   import { FaSolidBuilding } from 'svelte-icons-pack/fa';
   import { FaSolidHouse } from 'svelte-icons-pack/fa';
 
-  storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
-
   initializeStores();
   const drawerStore = getDrawerStore();
   const drawerSettings: DrawerSettings = {
-    id: 'side-menu',
+    id: 'side-menu'
   };
 
   var drawerIsOpen: boolean = false;
@@ -55,8 +46,13 @@
   import { page } from '$app/stores';
 </script>
 
-<Drawer class="mt-16" rounded="rounded-none" width="w-full" >
-  <AppRail width="w-24">
+<Drawer
+  class="mt-16"
+  rounded="rounded-none"
+  width="w-full"
+  bgDrawer="bg-surface-50-900-token"
+>
+  <AppRail width="w-24" background="bg-surface-50-900-token">
     <svelte:fragment slot="lead">
       <AppRailAnchor href="/" selected={$page.url.pathname === '/'}>
         <svelte:fragment slot="lead">
@@ -135,55 +131,12 @@
 </AppRail>
 </Drawer>
 
-<!-- App Bar -->
-<AppBar
-  slotTrail="place-content-end"
-  padding="p-0"
-  background="bg-none"
-  class="fixed h-16 w-full z-30"
->
-  <svelte:fragment slot="lead">
-    <button
-      type="button"
-      class="btn-lg hover:variant-soft-primary h-16 xl:hidden"
-      on:click={toggleDrawer}
-    >
-      {#if drawerIsOpen}
-        <Icon src={FaSolidXmark} />
-      {:else}
-        <Icon src={FaSolidBars} />
-      {/if}
-    </button>
-    <a class="h-16 btn-md hover:variant-soft-primary" href="/">
-      <img src="/logos/logo.png" class="h-10 block sm:hidden dark:hidden" alt="QLL Logo" />
-      <img src="/logos/text-logo.png" class="h-10 hidden sm:block dark:hidden" alt="QLL Logo" />
-      <img src="/logos/alt-logo.png" class="h-10 hidden dark:block dark:sm:hidden" alt="QLL Logo" />
-      <img src="/logos/alt-text-logo.png" class="h-10 hidden dark:sm:block" alt="QLL Logo" />
-    </a>
-  </svelte:fragment>
-  <div class="flex flex-row">
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/about">About</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/news">News</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/schedule">Schedule</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/competitions">Competitions</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/matches">Matches</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/quizzes">Quizzes</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/scorer">Scorer</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/teams">Teams</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/players">Players</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/venues">Venues</a>
-    <a class="btn btn-sm hidden xl:inline-flex hover:variant-soft-primary" href="/stats">Stats</a>
-  </div>
-  <svelte:fragment slot="trail">
-    <div class="flex flex-row items-center p-2 gap-2">
-      <LightSwitch />
-      <a class="flex flex-row items-center btn btn-md hover:variant-soft-primary" href="/">
-        <Icon src={FaSolidUser} />
-        <span>Log in</span>
-      </a>
-    </div>
-  </svelte:fragment>
-</AppBar>
+<!-- Nav Bar -->
+<NavBar />
 
 <!-- Page Route Content -->
-<slot />
+<div class="w-full flex flex-row items-start justify-center mt-16 pt-32 pb-16">
+  <div class="w-full max-w-5xl flex flex-col justify-start gap-8">
+    <slot />
+  </div>
+</div>
