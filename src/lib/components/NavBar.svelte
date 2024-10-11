@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { AppBar } from '@skeletonlabs/skeleton';
   import { LightSwitch } from '@skeletonlabs/skeleton';
+  import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
+  import { initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
+  import NavDrawer from '$lib/components/NavDrawer.svelte';
 
   // Icons
   import { Icon } from 'svelte-icons-pack';
@@ -21,6 +24,19 @@
   import type { PopupSettings } from '@skeletonlabs/skeleton';
 	import { storePopup } from '@skeletonlabs/skeleton';
 
+  initializeStores();
+  const drawerStore = getDrawerStore();
+  const drawerSettings: DrawerSettings = {
+    id: 'nav-menu'
+  };
+
+  function toggleDrawer(): null {
+    if ($drawerStore.open) {
+      drawerStore.close();
+    } else {
+      drawerStore.open(drawerSettings);
+    }
+  }
   storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
   export let links = [
@@ -39,26 +55,26 @@
   ]; 
 </script>
 
+<NavDrawer {links} />
+
 <AppBar
   slotTrail="place-content-end"
   padding="p-0"
   background="bg-surface-50-900-token"
-  class="fixed h-16 w-full z-30 left-0 top-0"
+  class="fixed h-16 w-full z-40 left-0 top-0"
 >
   <svelte:fragment slot="lead">
-    <!--
     <button
       type="button"
       class="btn-lg hover:variant-soft-primary h-16 xl:hidden"
       on:click={toggleDrawer}
     >
-      {#if drawerIsOpen}
+      {#if $drawerStore.open}
         <Icon src={FaSolidXmark} />
       {:else}
         <Icon src={FaSolidBars} />
       {/if}
     </button>
-    -->
     <a class="h-16 btn-md hover:variant-soft-primary" href="/">
       <img
         src="/logos/logo.png"
