@@ -84,17 +84,17 @@
       <img
         src="/logos/text-logo.png"
         class="h-10 hidden sm:block dark:hidden"
-        alt="QLL Logo"
+        alt="QLL Logo - Quiz League of London"
       />
       <img
-        src="/logos/alt-logo.png"
+        src="/logos/logo2.png"
         class="h-10 hidden dark:block dark:sm:hidden"
         alt="QLL Logo"
       />
       <img
-        src="/logos/alt-text-logo.png"
+        src="/logos/text-logo2.png"
         class="h-10 hidden dark:sm:block"
-        alt="QLL Logo"
+        alt="QLL Logo - Quiz League of London"
       />
     </a>
   </svelte:fragment>
