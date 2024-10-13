@@ -87,11 +87,16 @@ export const qll_theme: CustomThemeConfig = {
     "--color-error-800": "147 37 72", // #932548
     "--color-error-900": "120 30 59", // #781e3b
     // surface | #363061 
-    "--color-surface-50": "225 224 231", // #e1e0e7
-    "--color-surface-100": "215 214 223", // #d7d6df
-    "--color-surface-200": "205 203 216", // #cdcbd8
-    "--color-surface-300": "175 172 192", // #afacc0
-    "--color-surface-400": "114 110 144", // #726e90
+    "--color-surface-50": "255 255 255", // #ffffff
+    "--color-surface-100": "248 248 253", // #f8f8fd
+    "--color-surface-200": "247 246 252", // #f7f6fc
+    "--color-surface-300": "242 241 250", // #f2f1fa
+    "--color-surface-400": "232 230 247", // #e8e6f7
+    //"--color-surface-100": "225 224 231", // #e1e0e7
+    //"--color-surface-200": "215 214 223", // #d7d6df
+    //"--color-surface-300": "205 203 216", // #cdcbd8
+    //"--color-surface-400": "175 172 192", // #afacc0
+    //"--color-surface-400": "114 110 144", // #726e90
     "--color-surface-500": "54 48 97", // #363061
     "--color-surface-600": "49 43 87", // #312b57
     "--color-surface-700": "41 36 73", // #292449
