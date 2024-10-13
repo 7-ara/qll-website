@@ -1,12 +1,31 @@
 <script lang="ts">
-  function goToToday(): null {
-    const today: Date = new Date();
-    const dateInput = document.getElementById('match_date');
-    dateInput.value = today.toISOString().slice(0,10);
-  }
+  var chosenDate: string = '';
+  $: today = new Date().toISOString().slice(0, 10);
+  $: chosenDateString = new Date(chosenDate).toDateString();
+  const goToToday = () => { chosenDate = today; };
+  goToToday();
 </script>
 
-<div class="w-full flex flex-row items-center justify-center gap-4">
-  <button class="btn btn-md variant-filled-primary" on:click={goToToday}>Today</button>
-  <input class="input w-64" title="Match date" type="date" id="match_date"/>
+<h2 class="h2 text-center">
+  {chosenDateString}
+</h2>
+
+<div class="w-full grid grid-rows-2 gap-4 items-center justify-items-center">
+  <input
+    class="input w-40"
+    title="Match date"
+    type="date"
+    bind:value={chosenDate}
+    on:load={goToToday()}
+  />
+  {#if chosenDate === today}
+    <span class="badge variant-filled">Today</span>
+  {:else}
+    <button
+      class="btn btn-md w-40 variant-filled-primary"
+      on:click={goToToday}
+    >
+      Go to today
+    </button>
+  {/if}
 </div>
