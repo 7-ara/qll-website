@@ -1,13 +1,13 @@
 <script lang="ts">
-  var chosenDate: string = '';
+  export let date: string = today;
   $: today = new Date().toISOString().slice(0, 10);
-  $: chosenDateString = new Date(chosenDate).toDateString();
-  const goToToday = () => { chosenDate = today; };
+  $: dateString = new Date(date).toDateString();
+  const goToToday = () => { date = today; };
   goToToday();
 </script>
 
 <h2 class="h2 text-center">
-  {chosenDateString}
+  {dateString}
 </h2>
 
 <div class="w-full grid grid-rows-2 gap-4 items-center justify-items-center">
@@ -15,10 +15,10 @@
     class="input w-40"
     title="Match date"
     type="date"
-    bind:value={chosenDate}
+    bind:value={date}
     on:load={goToToday()}
   />
-  {#if chosenDate === today}
+  {#if date === today}
     <span class="badge variant-filled">Today</span>
   {:else}
     <button
