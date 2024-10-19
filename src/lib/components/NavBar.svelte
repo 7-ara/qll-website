@@ -78,22 +78,12 @@
     <a class="h-16 btn-md hover:variant-soft-primary" href="/">
       <img
         src="/logos/logo.png"
-        class="h-10 block sm:hidden dark:hidden"
+        class="h-10 block sm:hidden"
         alt="QLL Logo"
       />
       <img
         src="/logos/text-logo.png"
-        class="h-10 hidden sm:block dark:hidden"
-        alt="QLL Logo - Quiz League of London"
-      />
-      <img
-        src="/logos/logo2.png"
-        class="h-10 hidden dark:block dark:sm:hidden"
-        alt="QLL Logo"
-      />
-      <img
-        src="/logos/text-logo2.png"
-        class="h-10 hidden dark:sm:block"
+        class="h-10 hidden sm:block"
         alt="QLL Logo - Quiz League of London"
       />
     </a>
