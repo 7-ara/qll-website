@@ -11,21 +11,8 @@
   import { FaSolidXmark } from 'svelte-icons-pack/fa';
   import { FaSolidUser } from 'svelte-icons-pack/fa';
 
-  // Floating UI for Popups
-	import {
-    computePosition,
-    autoUpdate,
-    flip,
-    shift,
-    offset,
-    arrow
-  } from '@floating-ui/dom';
-  import { popup } from '@skeletonlabs/skeleton';
-  import type { PopupSettings } from '@skeletonlabs/skeleton';
-	import { storePopup } from '@skeletonlabs/skeleton';
-
   initializeStores();
-  const drawerStore = getDrawerStore();
+  const drawerStore: DrawerStore = getDrawerStore();
   const drawerSettings: DrawerSettings = {
     id: 'nav-menu'
   };
@@ -37,7 +24,6 @@
       drawerStore.open(drawerSettings);
     }
   }
-  storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
   export let links = [
     {label: 'About', href: '/about'},
