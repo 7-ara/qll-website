@@ -9,35 +9,9 @@
 <ContentBox>
   <h1 class="h1">Matches</h1>
   <CalendarRail bind:date={chosenDate}/> 
-  {#each data.summaries as {
-    competitionId,
-    competition,
-    division,
-    round,
-    date,
-    time,
-    venueId,
-    venue,
-    homeTeam,
-    awayTeam,
-    homeTeamId,
-    awayTeamId
-  }}
-    {#if date === chosenDate}
-      <MatchSummary
-        {competitionId}
-        {competition}
-        {division}
-        {round}
-        {date}
-        {time}
-        {venueId}
-        {venue}
-        {homeTeam}
-        {awayTeam}
-        {homeTeamId}
-        {awayTeamId}
-      />
+  {#each data.matches as match} 
+    {#if match.date === chosenDate}
+      <MatchSummary {match}/>
     {/if}
   {/each}
 </ContentBox>
