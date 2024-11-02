@@ -3,7 +3,5 @@
 </script>
 
 <ContentBox>
-  <div class="space-y-10 text-center flex flex-col items-center">
-    <h2 class="h2">Welcome to the Quiz League of London</h2>
-  </div>
+  <h1 class="h1">Welcome to the Quiz League of London</h1>
 </ContentBox>
